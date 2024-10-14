@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import cookieparser from "cookie-parser";
+import morganMiddleware from "./middlewares/log.middleware.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json({ limit: "100kb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieparser());
+app.use(morganMiddleware);
 
 
 
