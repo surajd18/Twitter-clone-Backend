@@ -8,7 +8,7 @@ dotenv.config({
 
 connectDB()
     .then(() => {
-        app.get('/api', (req, res) => {
+        app.get('/', (req, res) => {
             res.send(`<center><h1>Server is live!!🟢</h1></center>`);
         })
 
