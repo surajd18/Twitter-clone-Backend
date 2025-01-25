@@ -18,7 +18,7 @@ import { jwtVerify } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
-router.route("/register").post(
+router.route("/api/register").post(
   upload.fields([
     {
       name: "avatar",
@@ -32,19 +32,19 @@ router.route("/register").post(
   registerUser
 );
 
-router.route("/login").post(LogInUser);
+router.route("/api/login").post(LogInUser);
 
 //secured ROutes
-router.route("/logout").post(jwtVerify, LogOut);
-router.route("/refresh-token").post(refreshAccessToken);
-router.route("/change-password").post(jwtVerify, changeCurrentPassword);
-router.route("/current-user").get(jwtVerify, getcurrentUser);
-router.route("/update-account").patch(jwtVerify, updateAccountdetails);
-router.route("/avatar").patch(jwtVerify, upload.single("avatar"), updateAvatar);
+router.route("/api/logout").post(jwtVerify, LogOut);
+router.route("/api/refresh-token").post(refreshAccessToken);
+router.route("/api/change-password").post(jwtVerify, changeCurrentPassword);
+router.route("/api/current-user").get(jwtVerify, getcurrentUser);
+router.route("/api/update-account").patch(jwtVerify, updateAccountdetails);
+router.route("/api/avatar").patch(jwtVerify, upload.single("avatar"), updateAvatar);
 router
-  .route("/cover-image")
+  .route("/api/cover-image")
   .patch(jwtVerify, upload.single("coverImage"), updateCoverImage);
-router.route("/c/:username").get(jwtVerify, getUserChannelProfile);
-router.route("/history").get(jwtVerify, getWatchHistory);
+router.route("/api/c/:username").get(jwtVerify, getUserChannelProfile);
+router.route("/api/history").get(jwtVerify, getWatchHistory);
 
 export default router;

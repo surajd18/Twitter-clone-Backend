@@ -57,7 +57,7 @@ const registerUser = asyncHandler(async (req, res) => {
     coverImageLocalpath = req.files?.coverImage[0]?.path;
   }
 
-  console.log("COver Image Path ---->",coverImageLocalpath)
+  console.log("COver Image Path ---->", coverImageLocalpath)
 
   if (!avatarLocalpath) {
     throw new ApiError(400, "Avatar file is required!");
@@ -86,7 +86,7 @@ const registerUser = asyncHandler(async (req, res) => {
   );
 
   if (!createdUser) {
-    throw new ApiError(500, "Something went wrong!");
+    throw new ApiError(500, "Something went wrong while creating user!");
   }
 
   return res
