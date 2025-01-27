@@ -119,5 +119,7 @@ dist
 
 Dockerfile
 
+ecosystem.config.cjs
+
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Node
