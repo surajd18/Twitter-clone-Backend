@@ -7,7 +7,7 @@ const connectDB = async () => {
     console.log("Mongo DB Trying to connect")
     console.log("Mongo DB String", process.env.MONGO_URL);
     const connectionInstace = await mongoose.connect(
-      `${process.env.MONGO_URL}/${DB_NAME}`
+      "mongodb+srv://suraj:suraj123@cluster0.0aobp.mongodb.net/Youtube"
     );
 
     console.log(
