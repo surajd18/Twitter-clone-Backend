@@ -8,7 +8,7 @@ import app from "./app.js";
 connectDB()
     .then(() => {
         app.get('/', (req, res) => {
-            res.send(`<center><h1>Server is love!!🟢</h1></center>`);
+            res.send(`<center><h1>Server is live!!🟢</h1></center>`);
         })
 
 
